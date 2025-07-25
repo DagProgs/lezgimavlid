@@ -30,11 +30,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "0319e1f620ecbed6fbaa9bce9d522c52"
+    "revision": "0a10dae0219ccdf4308ad071cc411886"
   },
   {
     "url": "asset-manifest.json",
-    "revision": "074dc60b1bd7fdd4cd4999a4edfcbc44"
+    "revision": "5fedcd1df501ed664ff89dd05d33f37f"
   },
   {
     "url": "poems.json",
@@ -71,6 +71,18 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "static/js/main.4acd784a.js.map",
     "revision": "8a44c068f7943264dc9f1aa9202c6bf6"
+  },
+  {
+    "url": "static/js/main.5778e760.js",
+    "revision": "ce4f4d6f6bfa3864545ebd8d608146de"
+  },
+  {
+    "url": "static/js/main.5778e760.js.LICENSE.txt",
+    "revision": "cccfa45cda3f72c4ebb3fb2f4ba53a71"
+  },
+  {
+    "url": "static/js/main.5778e760.js.map",
+    "revision": "9a15ce887f52bf43767afe43b18b5665"
   },
   {
     "url": "main.js",
