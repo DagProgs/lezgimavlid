@@ -54,9 +54,9 @@
       "type": "image/png"
     }
   ],
-  "scope": "https://dagprogs.github.io/ruznamaKurah/",
+  "scope": "https://lezgimavlid.vercel.app/",
   "id": "lezgimavlid",
-  "start_url": "https://dagprogs.github.io/ruznamaKurah/",
+  "start_url": "https://lezgimavlid.vercel.app/",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#ffffff",
