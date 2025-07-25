@@ -26,11 +26,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "a292c5f5256f86c6e0e69841615bafb3"
+    "revision": "46d070f29e27fff64ff1557b6f54405c"
   },
   {
     "url": "manifest.json",
-    "revision": "0a10dae0219ccdf4308ad071cc411886"
+    "revision": "c444420cb8036b33acb7628e53972f3d"
   },
   {
     "url": "asset-manifest.json",
@@ -59,18 +59,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "static/js/453.ddbf7bee.chunk.js.map",
     "revision": "0e582db98fb72522cee66ad027d331bc"
-  },
-  {
-    "url": "static/js/main.4acd784a.js",
-    "revision": "974490648d749593c8fbfd22d57d9593"
-  },
-  {
-    "url": "static/js/main.4acd784a.js.LICENSE.txt",
-    "revision": "cccfa45cda3f72c4ebb3fb2f4ba53a71"
-  },
-  {
-    "url": "static/js/main.4acd784a.js.map",
-    "revision": "8a44c068f7943264dc9f1aa9202c6bf6"
   },
   {
     "url": "static/js/main.5778e760.js",
