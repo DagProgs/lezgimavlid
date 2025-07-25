@@ -1,11 +1,11 @@
 {
-  "manifest_version": 4,
+  "manifest_version": 3,
   "lang": "ru",
   "dir": "ltr",
   "name": "Мавлид",
   "short_name": "Мавлид - на лезгинском языке",
   "description": "Мавлид леги ч1алалди",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "categories": ["мавлид", "religion"],
   "icons": [
     {
