@@ -26,15 +26,15 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "063838575717b3620803c169d7019618"
+    "revision": "602585877d5d22327289e30cbfca0119"
   },
   {
     "url": "manifest.json",
-    "revision": "67087ef4b3f34b1982bddf57f33e2c76"
+    "revision": "c31471e523f85f19d7fd1cc02144c12a"
   },
   {
     "url": "asset-manifest.json",
-    "revision": "6265548885660c44260737bfa4ebbcf4"
+    "revision": "091b953c4dc3d49bfc9c27f4657c0748"
   },
   {
     "url": "poems.json",
@@ -61,16 +61,16 @@ workbox.precaching.precacheAndRoute([
     "revision": "0e582db98fb72522cee66ad027d331bc"
   },
   {
-    "url": "static/js/main.1f4affa9.js",
-    "revision": "6d03d8d6747a64239991cafaf2a9838c"
+    "url": "static/js/main.f491680a.js",
+    "revision": "e3648cd9d72347a73e50c621d50fff4a"
   },
   {
-    "url": "static/js/main.1f4affa9.js.LICENSE.txt",
+    "url": "static/js/main.f491680a.js.LICENSE.txt",
     "revision": "cccfa45cda3f72c4ebb3fb2f4ba53a71"
   },
   {
-    "url": "static/js/main.1f4affa9.js.map",
-    "revision": "cca7e24f97cd5e00cdb3c6ba744b8626"
+    "url": "static/js/main.f491680a.js.map",
+    "revision": "8711be058b562dbe5a048eaf9457a785"
   },
   {
     "url": "pwacompat.min.js",
