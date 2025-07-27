@@ -26,11 +26,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "602585877d5d22327289e30cbfca0119"
+    "revision": "59f01f09c56f3873407f26efa639ce39"
   },
   {
     "url": "manifest.json",
-    "revision": "c31471e523f85f19d7fd1cc02144c12a"
+    "revision": "8b2443fdef7146f78c6daa96a5c41a0d"
   },
   {
     "url": "asset-manifest.json",
@@ -73,8 +73,24 @@ workbox.precaching.precacheAndRoute([
     "revision": "8711be058b562dbe5a048eaf9457a785"
   },
   {
+    "url": "main.js",
+    "revision": "80846bb3403b82a07c7f84658f186b23"
+  },
+  {
+    "url": "polyfills.js",
+    "revision": "56f34b0f4d3a42d45bfdb1782adaa173"
+  },
+  {
     "url": "pwacompat.min.js",
     "revision": "038770ef3eb91f3e8a50a3916cb7cf28"
+  },
+  {
+    "url": "runtime.js",
+    "revision": "cd1ce3e306bf57f272364d1cc0249d6e"
+  },
+  {
+    "url": "update.js",
+    "revision": "2e37a1e61c0f6c88bddbb61150536944"
   },
   {
     "url": "img/icons/icon-128x128.png",
