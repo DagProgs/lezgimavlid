@@ -1,1 +1,534 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0"/><meta name="theme-color" content="#ffffff"/><meta name="description" content="Мавлид на лезгинском языке"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>Мавлид на лезгинском языке</title><link rel="stylesheet" href="css/style.css"><script defer="defer" src="/static/js/main.f491680a.js"></script><link href="/static/css/main.e6c13ad2.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><div id="imyModal" class="imodal" style="display:none"><div class="imodal-content"><span class="iclose" role="button" aria-label="Close">&times;</span><p>Для более комфортного использования установите приложение на ваше устройство. Следуйте этим шагам:</p><ol><li>Нажмите кнопку "Поделиться" (иконка с квадратом и стрелкой).</li><li>Выберите опцию "Добавить на главный экран".</li><li>Подтвердите добавление.</li></ol><p></p></div></div><script>!function(){const e=document.getElementById("imyModal"),t=e.querySelector(".iclose"),a=localStorage.getItem("appInstalled"),n=window.matchMedia("(display-mode: standalone)").matches,l=/iPhone|iPod/i.test(navigator.userAgent);function d(){e.style.display="none"}a||n||!l||(e.style.display="block",localStorage.setItem("appInstalled","true")),t.addEventListener("click",d),e.addEventListener("click",t=>{t.target===e&&d()}),document.addEventListener("keydown",t=>{"Escape"===t.key&&"block"===e.style.display&&d()})}()</script><div id="androidModal" class="imodal" style="display:none"><div class="imodal-content"><span class="iclose" role="button" aria-label="Close">&times;</span><p>Для более комфортного использования установите это приложение на ваше устройство. Следуйте этим шагам:</p><ol><li>Нажмите меню браузера (три точки или меню).</li><li>Выберите "Добавить на главный экран".</li><li>Подтвердите добавление.</li></ol></div></div><script>!function(){const e=document.getElementById("androidModal"),t=e.querySelector(".iclose"),n=/Android/i.test(navigator.userAgent),l=localStorage.getItem("appInstalled");function a(){e.style.display="none"}n&&!l&&(e.style.display="block",localStorage.setItem("appInstalled","true")),t.addEventListener("click",a),e.addEventListener("click",t=>{t.target===e&&a()}),document.addEventListener("keydown",t=>{"Escape"===t.key&&"block"===e.style.display&&a()})}()</script><script type="text/javascript" src="main.js"></script><script>"serviceWorker"in navigator&&window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").then(e=>console.log("SW registered:",e.scope)).catch(e=>console.log("SW registration failed:",e))})</script></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="favicon.ico" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta id="status-bar-color" name="theme-color" content="#f8f9fa">
+  <meta name="google" content="notranslate">
+  <title>Мавлид - на лезгинском языке</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Мавлид - на лезгинском языке">
+  <meta name="keywords" content="мавлид, лезги мавлид, лезги">
+  <meta name="robots" content="index,follow,noodp">
+  <meta name="googlebot" content="index,follow">
+  <meta name="google" content="nositelinkssearchbox">
+  <meta name="google" content="notranslate">
+  <meta name="google-site-verification" content="verification_token">
+  <meta name="generator" content="WEB APP">
+  <meta content="website">
+  <link rel="manifest" href="manifest.json" />
+  <script async src="pwacompat.min.js"></script>
+  <script defer src="update.js" type="module"></script>
+  <style>
+    :root {
+      --primary-color: #2e7d32;
+      --bg-color: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+      --border-color: #dddddd;
+      --fav-color: #ffb300;
+      --shadow: rgba(0, 0, 0, 0.05);
+      --header-bg: #ffffff;
+      --progress-bg: #27ae60;
+      --share-color: #1976d2;
+    }
+
+    body.dark-mode {
+      --bg-color: #121212;
+      --card-bg: #1e1e1e;
+      --text-color: #e0e0e0;
+      --border-color: #333333;
+      --shadow: rgba(0, 0, 0, 0.3);
+      --header-bg: #1e1e1e;
+      --progress-bg: #2ecc71;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      margin: 0;
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Индикатор прогресса чтения */
+    .progress-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: transparent;
+      z-index: 1001;
+      display: none;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: var(--progress-bg);
+      width: 0%;
+      transition: width 0.1s ease-out;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .home-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      min-height: 60px;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    .header-btns {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    /* Кнопка фильтра избранного в шапке */
+    .filter-btn {
+      position: relative;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 10px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #888;
+      box-shadow: 0 2px 5px var(--shadow);
+      transition: 0.2s;
+    }
+
+    .filter-btn.active {
+      border-color: var(--fav-color);
+      color: var(--fav-color);
+      background: var(--card-bg);
+    }
+
+    .filter-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    .filter-btn.active svg {
+      fill: var(--fav-color);
+    }
+
+    /* Счетчик избранного на кнопке */
+    .fav-counter {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: #e91e63;
+      color: white;
+      font-size: 0.75rem;
+      min-width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border: 2px solid var(--card-bg);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Карточка мавлида */
+    .mavlid-card {
+      background: var(--card-bg);
+      padding: 15px 20px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px var(--shadow);
+      cursor: pointer;
+      border-left: 5px solid var(--primary-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.2s;
+    }
+
+    .mavlid-card:hover {
+      transform: translateX(5px);
+    }
+
+    .mavlid-info {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      overflow: hidden;
+    }
+
+    .mavlid-info span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .mavlid-id {
+      color: var(--primary-color);
+      font-weight: bold;
+      margin-right: 12px;
+      opacity: 0.8;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .action-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: #888;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fav-btn.is-active {
+      color: var(--fav-color);
+    }
+
+    .share-btn:hover {
+      color: var(--share-color);
+    }
+
+    .action-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+
+    .fav-btn.is-active svg {
+      fill: var(--fav-color);
+      stroke: var(--fav-color);
+    }
+
+    /* Панель управления текстом */
+    .controls-panel {
+      position: sticky;
+      top: 0;
+      background: var(--header-bg);
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      z-index: 100;
+      box-shadow: 0 2px 10px var(--shadow);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-color);
+      transition: 0.2s;
+    }
+
+    .icon-btn svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .full-text-container {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px var(--shadow);
+      margin-bottom: 80px;
+      margin-top: 15px;
+    }
+
+    #content-title {
+      color: var(--primary-color);
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    #content-body {
+      line-height: 1.8;
+      transition: font-size 0.1s ease-out;
+    }
+
+    .empty-message {
+      text-align: center;
+      padding: 50px;
+      color: #888;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Прогресс скролла -->
+  <div id="p-container" class="progress-container">
+    <div id="p-bar" class="progress-bar"></div>
+  </div>
+  <!-- ГЛАВНЫЙ ЭКРАН -->
+  <div id="home-page" class="page active">
+    <div class="home-header">
+      <h1>Мавлид</h1>
+      <div class="header-btns">
+        <!-- Кнопка Поделиться (Системное API) -->
+        <button class="icon-btn share-btn" onclick="shareApp()" title="Поделиться приложением">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13"></path>
+          </svg>
+        </button>
+        <!-- Кнопка темы -->
+        <button class="icon-btn" onclick="toggleTheme()" title="Сменить тему">
+          <svg id="theme-icon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <!-- Кнопка Избранное (Фильтр) -->
+        <button id="filter-favs" class="filter-btn" onclick="toggleFilter()" title="Показать только любимые">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+            </path>
+          </svg>
+          <div id="fav-count-badge" class="fav-counter">0</div>
+        </button>
+      </div>
+    </div>
+    <div id="list"></div>
+  </div>
+  <!-- ЭКРАН ТЕКСТА -->
+  <div id="detail-page" class="page">
+    <div class="controls-panel">
+      <button class="icon-btn" onclick="showHomePage()">
+        <svg viewBox="0 0 24 24">
+          <path d="M19 12H5M12 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <div class="btn-group">
+        <button class="icon-btn" onclick="toggleTheme()"><svg class="theme-icon-small" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg></button>
+        <button class="icon-btn" onclick="changeFontSize(-2)"><svg viewBox="0 0 24 24">
+            <path d="M5 12h14"></path>
+          </svg></button>
+        <button class="icon-btn" onclick="changeFontSize(2)"><svg viewBox="0 0 24 24">
+            <path d="M12 5v14M5 12h14"></path>
+          </svg></button>
+        <button class="icon-btn" onclick="resetFontSize()"><svg viewBox="0 0 24 24">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8M3 3v5h5"></path>
+          </svg></button>
+      </div>
+    </div>
+    <div class="full-text-container">
+      <h2 id="content-title"></h2>
+      <div id="content-body"></div>
+    </div>
+  </div>
+  <script>
+    const STORAGE_FONT_KEY = 'mavlid_font_size';
+    const STORAGE_FAV_KEY = 'mavlid_favorites';
+    const STORAGE_THEME_KEY = 'mavlid_theme';
+    let allMavlids = [];
+    let favorites = JSON.parse(localStorage.getItem(STORAGE_FAV_KEY)) || [];
+    let currentFontSize = parseInt(localStorage.getItem(STORAGE_FONT_KEY)) || 18;
+    let isFilterActive = false;
+    const bodyContent = document.getElementById('content-body');
+    const listDiv = document.getElementById('list');
+    const filterBtn = document.getElementById('filter-favs');
+    const favBadge = document.getElementById('fav-count-badge');
+    const statusBar = document.getElementById('status-bar-color');
+    const progressBar = document.getElementById('p-bar');
+    const progressContainer = document.getElementById('p-container');
+
+    async function loadData() {
+      try {
+        const response = await fetch('assets/db/mavlid.json');
+        allMavlids = await response.json();
+        applySavedTheme();
+        updateFilterState();
+        renderList();
+      } catch (e) { listDiv.innerHTML = "<p style='text-align:center;'>Файл mavlid.json не найден</p>"; }
+    }
+
+    // СИСТЕМНОЕ API ПОДЕЛИТЬСЯ
+    async function shareApp() {
+      const shareData = {
+        title: 'Мавлиды - Полная версия',
+        text: 'Читайте мавлиды в удобном приложении!',
+        url: window.location.href
+      };
+      try {
+        if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+          await navigator.share(shareData);
+        } else {
+          // Запасной вариант если системное меню недоступно
+          await navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
+          alert("Ссылка скопирована в буфер обмена");
+        }
+      } catch (err) {
+        console.error("Ошибка при попытке поделиться:", err);
+      }
+    }
+
+    window.onscroll = function () {
+      if (document.getElementById('detail-page').style.display === 'block') {
+        let winScroll = document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        progressBar.style.width = (winScroll / height) * 100 + "%";
+      }
+    };
+
+    function toggleTheme() {
+      const isDark = document.body.classList.toggle('dark-mode');
+      localStorage.setItem(STORAGE_THEME_KEY, isDark ? 'dark' : 'light');
+      updateThemeUI(isDark);
+    }
+
+    function applySavedTheme() {
+      const isDark = localStorage.getItem(STORAGE_THEME_KEY) === 'dark';
+      if (isDark) document.body.classList.add('dark-mode');
+      updateThemeUI(isDark);
+    }
+
+    function updateThemeUI(isDark) {
+      const iconPath = isDark
+        ? "M12 3v1m0 16v1m9-9h-1M4 12H3m15.36-7.36l-.7.7M7.05 16.95l-.7.7M16.95 16.95l.7.7M7.05 7.05l-.7.7M12 8a4 4 0 100 8 4 4 0 000-8z"
+        : "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z";
+      document.querySelectorAll('#theme-icon, .theme-icon-small').forEach(i => i.innerHTML = `<path d="${iconPath}"></path>`);
+      statusBar.setAttribute('content', isDark ? '#121212' : '#f8f9fa');
+    }
+
+    function updateFilterState() {
+      favBadge.textContent = favorites.length;
+      filterBtn.style.display = (favorites.length > 0 || isFilterActive) ? 'flex' : 'none';
+    }
+
+    function renderList() {
+      listDiv.innerHTML = '';
+      const data = isFilterActive ? allMavlids.filter(m => favorites.includes(m.id)) : allMavlids;
+      if (data.length === 0 && isFilterActive) {
+        listDiv.innerHTML = `<div class="empty-message">Нет избранных текстов</div>`;
+        return;
+      }
+      data.forEach(item => {
+        const isFav = favorites.includes(item.id);
+        const card = document.createElement('div');
+        card.className = 'mavlid-card';
+        card.innerHTML = `
+<div class="mavlid-info" onclick="openMavlidById(${item.id})">
+<span class="mavlid-id">${item.id}.</span>
+<span>${item.first_name}</span>
+</div>
+<div class="card-actions">
+<button class="action-btn fav-btn ${isFav ? 'is-active' : ''}" onclick="toggleFavorite(${item.id}, event)">
+<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+</button>
+</div>`;
+        listDiv.appendChild(card);
+      });
+    }
+
+    function openMavlidById(id) {
+      const m = allMavlids.find(x => x.id === id);
+      if (m) showDetailPage(m.first_name, m.last_name);
+    }
+
+    function toggleFilter() {
+      isFilterActive = !isFilterActive;
+      filterBtn.classList.toggle('active', isFilterActive);
+      updateFilterState();
+      renderList();
+    }
+
+    function toggleFavorite(id, e) {
+      e.stopPropagation();
+      const idx = favorites.indexOf(id);
+      if (idx > -1) favorites.splice(idx, 1); else favorites.push(id);
+      localStorage.setItem(STORAGE_FAV_KEY, JSON.stringify(favorites));
+      updateFilterState();
+      if (isFilterActive) renderList(); else e.currentTarget.classList.toggle('is-active');
+    }
+
+    function showDetailPage(title, text) {
+      document.getElementById('content-title').textContent = title;
+      bodyContent.innerHTML = text;
+      bodyContent.style.fontSize = currentFontSize + 'px';
+      document.getElementById('home-page').style.display = 'none';
+      document.getElementById('detail-page').style.display = 'block';
+      progressContainer.style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+
+    function showHomePage() {
+      document.getElementById('detail-page').style.display = 'none';
+      document.getElementById('home-page').style.display = 'block';
+      progressContainer.style.display = 'none';
+      window.scrollTo(0, 0);
+    }
+
+    function changeFontSize(s) {
+      currentFontSize = Math.max(10, Math.min(60, currentFontSize + s));
+      localStorage.setItem(STORAGE_FONT_KEY, currentFontSize);
+      bodyContent.style.fontSize = currentFontSize + 'px';
+    }
+
+    function resetFontSize() {
+      currentFontSize = 18;
+      localStorage.setItem(STORAGE_FONT_KEY, 18);
+      bodyContent.style.fontSize = '18px';
+    }
+
+    loadData();
+  </script>
+
+  <script type="text/javascript" src="runtime.js"></script>
+  <script type="text/javascript" src="polyfills.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
