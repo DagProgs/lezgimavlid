@@ -26,31 +26,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "113ce1e3fb3e9582731bd1d4a3eda81b"
+    "revision": "db6acebb9f3b1e251239c4b21d875dea"
   },
   {
     "url": "manifest.json",
-    "revision": "3eaa69ea107d45f547163da88a4faedd"
-  },
-  {
-    "url": "vercel.json",
-    "revision": "abd07d5b81e7d2c7029cc5611e1ec638"
-  },
-  {
-    "url": "version.json",
-    "revision": "e514bb200f846e616ee58cb8683408ad"
-  },
-  {
-    "url": "flutter_bootstrap.js",
-    "revision": "009f80446e6b46798588056f3110fc3b"
-  },
-  {
-    "url": "flutter_service_worker.js",
-    "revision": "352338e9cb655d142bc50a08ef63b1b0"
-  },
-  {
-    "url": "flutter.js",
-    "revision": "6c17417d16074f99ee8c32442466de2d"
+    "revision": "00b2ff83d01fe3f309723de2328d063c"
   },
   {
     "url": "main.js",
@@ -73,24 +53,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "480b238fd3de4af93586d44d32dc8530"
   },
   {
-    "url": "assets/AssetManifest.bin",
-    "revision": "3b434c9227a27c2867f7e0affebe6f34"
-  },
-  {
-    "url": "assets/AssetManifest.bin.json",
-    "revision": "2796c346db82811c292321a254244e69"
-  },
-  {
-    "url": "assets/assets/mavlid.json",
-    "revision": "2346913cab5f06f674b58d48dbeb024d"
-  },
-  {
-    "url": "assets/FontManifest.json",
-    "revision": "dc3d03800ccca4601324923c0b1d6d57"
-  },
-  {
-    "url": "assets/fonts/MaterialIcons-Regular.otf",
-    "revision": "c37ed1a83a3f4bc116115df68bba65c3"
+    "url": "assets/db/mavlid.json",
+    "revision": "ceec51e79b80e412833e6805cdd5c675"
   },
   {
     "url": "assets/icons/icon-128x128.png",
@@ -155,26 +119,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "assets/img/7.png",
     "revision": "8a3ea791bd4ece4448adb13df9bcfc78"
-  },
-  {
-    "url": "assets/NOTICES",
-    "revision": "d39f36b08d9640d9a7c9ea36675d6f39"
-  },
-  {
-    "url": "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
-    "revision": "33b7d9392238c04c131b6ce224e13711"
-  },
-  {
-    "url": "assets/shaders/ink_sparkle.frag",
-    "revision": "2815c3cf1e7af2d8a2d328064a62e3a0"
-  },
-  {
-    "url": "assets/shaders/stretch_effect.frag",
-    "revision": "f0ab847ccb98001d214e09f120664284"
-  },
-  {
-    "url": "canvaskit/canvaskit.js",
-    "revision": "0e52934f95b3110d951b67f56c9d9ab0"
   }
 ]);
 
