@@ -26,11 +26,31 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "db6acebb9f3b1e251239c4b21d875dea"
+    "revision": "113ce1e3fb3e9582731bd1d4a3eda81b"
   },
   {
     "url": "manifest.json",
-    "revision": "405966ded3cfc537278b11b95ed4eeca"
+    "revision": "3b02422435fbd44d23ed2e6965e019f4"
+  },
+  {
+    "url": "vercel.json",
+    "revision": "abd07d5b81e7d2c7029cc5611e1ec638"
+  },
+  {
+    "url": "version.json",
+    "revision": "e514bb200f846e616ee58cb8683408ad"
+  },
+  {
+    "url": "flutter_bootstrap.js",
+    "revision": "90d29b1720da3ecf484a8faf9751a23e"
+  },
+  {
+    "url": "flutter_service_worker.js",
+    "revision": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  {
+    "url": "flutter.js",
+    "revision": "6c17417d16074f99ee8c32442466de2d"
   },
   {
     "url": "main.js",
@@ -53,8 +73,24 @@ workbox.precaching.precacheAndRoute([
     "revision": "480b238fd3de4af93586d44d32dc8530"
   },
   {
-    "url": "assets/db/mavlid.json",
-    "revision": "ceec51e79b80e412833e6805cdd5c675"
+    "url": "assets/AssetManifest.bin",
+    "revision": "3b434c9227a27c2867f7e0affebe6f34"
+  },
+  {
+    "url": "assets/AssetManifest.bin.json",
+    "revision": "2796c346db82811c292321a254244e69"
+  },
+  {
+    "url": "assets/assets/mavlid.json",
+    "revision": "2346913cab5f06f674b58d48dbeb024d"
+  },
+  {
+    "url": "assets/FontManifest.json",
+    "revision": "dc3d03800ccca4601324923c0b1d6d57"
+  },
+  {
+    "url": "assets/fonts/MaterialIcons-Regular.otf",
+    "revision": "e7069dfd19b331be16bed984668fe080"
   },
   {
     "url": "assets/icons/icon-128x128.png",
@@ -119,6 +155,70 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "assets/img/7.png",
     "revision": "8a3ea791bd4ece4448adb13df9bcfc78"
+  },
+  {
+    "url": "assets/NOTICES",
+    "revision": "d39f36b08d9640d9a7c9ea36675d6f39"
+  },
+  {
+    "url": "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
+    "revision": "b93248a553f9e8bc17f1065929d5934b"
+  },
+  {
+    "url": "assets/shaders/ink_sparkle.frag",
+    "revision": "2815c3cf1e7af2d8a2d328064a62e3a0"
+  },
+  {
+    "url": "assets/shaders/stretch_effect.frag",
+    "revision": "f0ab847ccb98001d214e09f120664284"
+  },
+  {
+    "url": "canvaskit/canvaskit.js",
+    "revision": "0e52934f95b3110d951b67f56c9d9ab0"
+  },
+  {
+    "url": "canvaskit/canvaskit.js.symbols",
+    "revision": "7d65ba80db73056cf90af657c82415f6"
+  },
+  {
+    "url": "canvaskit/chromium/canvaskit.js",
+    "revision": "c9789bccdd6aa497f149a4649e06d670"
+  },
+  {
+    "url": "canvaskit/chromium/canvaskit.js.symbols",
+    "revision": "214ee287788c0e35624da3ee83dbd3d1"
+  },
+  {
+    "url": "canvaskit/skwasm_heavy.js",
+    "revision": "b0f50d611a7641ff5f75efa54874c3b4"
+  },
+  {
+    "url": "canvaskit/skwasm_heavy.js.symbols",
+    "revision": "db2a5db43bb1408935eac856be1d9f06"
+  },
+  {
+    "url": "canvaskit/skwasm.js",
+    "revision": "514fe49598370b06cdb71bb3778a199f"
+  },
+  {
+    "url": "canvaskit/skwasm.js.symbols",
+    "revision": "b8c2d893dad937bb4b9099b0df3280e1"
+  },
+  {
+    "url": "canvaskit/webparagraph/canvaskit.js",
+    "revision": "003f529b235d9f71c3b5e6c439330d87"
+  },
+  {
+    "url": "canvaskit/webparagraph/canvaskit.js.symbols",
+    "revision": "3184b27cda5ef5649c727c7c4f0ae31e"
+  },
+  {
+    "url": "canvaskit/wimp.js",
+    "revision": "e6084b5f6628d1ffc5236f8c224750cd"
+  },
+  {
+    "url": "canvaskit/wimp.js.symbols",
+    "revision": "53d78ee9cde09cd3336add36d64f1c37"
   }
 ]);
 
