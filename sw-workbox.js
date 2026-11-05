@@ -30,7 +30,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "manifest.json",
-    "revision": "3b02422435fbd44d23ed2e6965e019f4"
+    "revision": "3eaa69ea107d45f547163da88a4faedd"
   },
   {
     "url": "vercel.json",
@@ -42,11 +42,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "flutter_bootstrap.js",
-    "revision": "90d29b1720da3ecf484a8faf9751a23e"
+    "revision": "009f80446e6b46798588056f3110fc3b"
   },
   {
     "url": "flutter_service_worker.js",
-    "revision": "d41d8cd98f00b204e9800998ecf8427e"
+    "revision": "352338e9cb655d142bc50a08ef63b1b0"
   },
   {
     "url": "flutter.js",
@@ -90,7 +90,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "assets/fonts/MaterialIcons-Regular.otf",
-    "revision": "e7069dfd19b331be16bed984668fe080"
+    "revision": "c37ed1a83a3f4bc116115df68bba65c3"
   },
   {
     "url": "assets/icons/icon-128x128.png",
@@ -162,7 +162,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
-    "revision": "b93248a553f9e8bc17f1065929d5934b"
+    "revision": "33b7d9392238c04c131b6ce224e13711"
   },
   {
     "url": "assets/shaders/ink_sparkle.frag",
@@ -175,50 +175,6 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "canvaskit/canvaskit.js",
     "revision": "0e52934f95b3110d951b67f56c9d9ab0"
-  },
-  {
-    "url": "canvaskit/canvaskit.js.symbols",
-    "revision": "7d65ba80db73056cf90af657c82415f6"
-  },
-  {
-    "url": "canvaskit/chromium/canvaskit.js",
-    "revision": "c9789bccdd6aa497f149a4649e06d670"
-  },
-  {
-    "url": "canvaskit/chromium/canvaskit.js.symbols",
-    "revision": "214ee287788c0e35624da3ee83dbd3d1"
-  },
-  {
-    "url": "canvaskit/skwasm_heavy.js",
-    "revision": "b0f50d611a7641ff5f75efa54874c3b4"
-  },
-  {
-    "url": "canvaskit/skwasm_heavy.js.symbols",
-    "revision": "db2a5db43bb1408935eac856be1d9f06"
-  },
-  {
-    "url": "canvaskit/skwasm.js",
-    "revision": "514fe49598370b06cdb71bb3778a199f"
-  },
-  {
-    "url": "canvaskit/skwasm.js.symbols",
-    "revision": "b8c2d893dad937bb4b9099b0df3280e1"
-  },
-  {
-    "url": "canvaskit/webparagraph/canvaskit.js",
-    "revision": "003f529b235d9f71c3b5e6c439330d87"
-  },
-  {
-    "url": "canvaskit/webparagraph/canvaskit.js.symbols",
-    "revision": "3184b27cda5ef5649c727c7c4f0ae31e"
-  },
-  {
-    "url": "canvaskit/wimp.js",
-    "revision": "e6084b5f6628d1ffc5236f8c224750cd"
-  },
-  {
-    "url": "canvaskit/wimp.js.symbols",
-    "revision": "53d78ee9cde09cd3336add36d64f1c37"
   }
 ]);
 
